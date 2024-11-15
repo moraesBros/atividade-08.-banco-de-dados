@@ -1,0 +1,148 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <title>Flasky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href=" //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="navbar navbar-inverse" role="navigation">
+      ::before
+      <div class="container">
+        ::before
+        <div class=navbar-header">
+          ::before
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=" .navbar-collapse">          
+<span class="sr-only">Toggle navigation</span> 
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>  
+    <span class="icon-bar"></span>
+</button>
+          <a class="navbar-brand" href="L">
+            "Avaliação Contínua: ""
+            <b>Atividade 060</b>
+          </a>
+          ::after
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="L">Home</a>
+            </li>
+          </ul>
+        </div>
+::after
+      </div>
+      ::after
+    </div>
+    <div class="container">
+      ::before
+      <div class="page-headr">
+        <h1>Hello, Stranger!</h1>
+        <p>Prazer em conhece-lo ... !</p>
+      </div>
+<form action method="post" class="form" role="form>
+<input id="csrf_token" name="csrf_token" type="hidden" value="IjZmZWU4MmFkOTM2OTljMzZkMWFmNGYwYzExOWFjYjNiMWY1MjBiNDEi.ZzaE6w.HwC_gDQeUWbJ4cjvEebqm4fU6Z4">
+<div class="form-group  required"><label class="control-label" for="name">What is your name?</label>
+        <input class="form-control" id="name" name="name" required="" type="text" value="">
+      <label class="control-label" for="name">What is your name?</label>
+  <input class="form-control" id="name" name="name" required="" type="text" value="">
+  </div>
+  <input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit">
+</form>
+  <h2>Relação de usuários cadastrados</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>nome do usuário</th>
+      <th>função</th>  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>administrator</td>
+    </tr>
+    <tr>
+      <td>Susan</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>David</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>Aluno Ednilton Silva Moraes</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>Fabio Teixeira</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>Fabio Teixeira - Avaliação</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>teste</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>teste2</td>
+      <td>user</td>
+    </tr>
+    <tr>
+      <td>Giorno Giovanna</td>
+      <td>user</td>
+    </tr>
+  </tbody>
+</table>
+      ::after
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous"></script>  
+ <script>
+   
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+ </script>
+  </body>
+</html>
